@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv").config();
 
 //
 const authRouter = require("./routes/auth.router");
@@ -7,6 +8,8 @@ const authRouter = require("./routes/auth.router");
 const PORT = 5000;
 
 const app = express();
+
+app.use(express.json());
 
 app.use("/auth", authRouter)
 
@@ -16,7 +19,7 @@ async function startServer(){
 
     app.listen(PORT, ()=> console.log(`Running on port ${PORT}...`)) 
     } catch (e) {
-        console.log(e);
+        console.log("Server ERROR: ", e);
     }
    
 }

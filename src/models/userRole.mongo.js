@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
-const Role = new Schema({
+const RoleSchema = new Schema({
     value: {type: String, unique: true, default: "USER" }
 })
 
-module.exports = model("Role", Role);
+module.exports = model("Role", RoleSchema);
