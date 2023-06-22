@@ -14,6 +14,7 @@ app.use(express.json());
 app.use("/auth", authRouter)
 
 async function startServer(){
+    
     try {
     await mongoose.connect("mongodb+srv://qwerty:qwerty123@cluster0.yumv8av.mongodb.net/auth_roles?retryWrites=true&w=majority")
 
